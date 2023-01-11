@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,7 +20,12 @@ public class BookController {
 
     @GetMapping("/books")
     public List<Book> getBooks() {
-        return bookService.getBooks();
+        return this.bookService.getBooks();
+    }
+
+    @GetMapping("/{id}")
+    public Book getByIdBook(@PathVariable(name = "id") Long id) {
+        return this.bookService.getByIdBook(id);
     }
     
     

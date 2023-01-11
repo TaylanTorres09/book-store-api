@@ -15,7 +15,11 @@ public class BookService {
     private BookRepository bookRepository;
 
     public List<Book> getBooks() {
-        return bookRepository.findAll();
+        return this.bookRepository.findAll();
+    }
+
+    public Book getByIdBook(Long id) {
+        return this.bookRepository.findById(id).get();
     }
 
 }
