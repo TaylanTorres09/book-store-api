@@ -15,11 +15,11 @@ public class CategoryService {
     private CategoryRepository categoryRepository;
 
     public List<Category> getCategory() {
-        return categoryRepository.findAll();
+        return this.categoryRepository.findAll();
     }
 
     public Category getByIdCategory(Long id) {
-        return categoryRepository.findById(id).get();
+        return this.categoryRepository.findById(id).get();
     }
 
 }

@@ -20,12 +20,12 @@ public class CategoryController {
 
     @GetMapping("/categories")
     public List<Category> getCategory() {
-        return categoryService.getCategory();
+        return this.categoryService.getCategory();
     }
 
     @GetMapping("/{id}")
     public Category getByIdCategory(@PathVariable(name = "id") Long id) {
-        return categoryService.getByIdCategory(id);
+        return this.categoryService.getByIdCategory(id);
     }
 
 }
