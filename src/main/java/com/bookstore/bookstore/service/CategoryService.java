@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.bookstore.bookstore.models.Category;
 import com.bookstore.bookstore.repositories.CategoryRepository;
+import com.bookstore.bookstore.service.exceptions.ObjectNotFound;
 
 @Service
 public class CategoryService {
@@ -19,7 +20,8 @@ public class CategoryService {
     }
 
     public Category getByIdCategory(Long id) {
-        return this.categoryRepository.findById(id).get();
+        return this.categoryRepository.findById(id)
+                    .orElseThrow(() -> new ObjectNotFound("Category id: " + id + " not found."));
     }
 
 }
