@@ -11,8 +11,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "books")
 @Data
@@ -33,15 +37,4 @@ public class Book implements Serializable {
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
-
-    public Book(){
-    }
-
-    public Book(Long id, String title, String author, String text, Category category) {
-        this.id = id;
-        this.title = title;
-        this.author = author;
-        this.text = text;
-        this.category = category;
-    }
 }

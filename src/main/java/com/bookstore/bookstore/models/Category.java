@@ -10,8 +10,12 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "categories")
 @Data
@@ -26,9 +30,6 @@ public class Category implements Serializable {
 
     private String description;
 
-    public Category(){
-    }
-    
     public Category(Long id, String name, String description) {
         this.id = id;
         this.name = name;
