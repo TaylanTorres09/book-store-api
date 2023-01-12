@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.bookstore.bookstore.models.Book;
 import com.bookstore.bookstore.repositories.BookRepository;
+import com.bookstore.bookstore.service.exceptions.ObjectNotFound;
 
 @Service
 public class BookService {
@@ -19,7 +20,8 @@ public class BookService {
     }
 
     public Book getByIdBook(Long id) {
-        return this.bookRepository.findById(id).get();
+        return this.bookRepository.findById(id)
+                .orElseThrow(() -> new ObjectNotFound("Book id: " + id + ", not Found."));
     }
 
 }

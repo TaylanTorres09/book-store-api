@@ -21,7 +21,7 @@ public class CategoryService {
 
     public Category getByIdCategory(Long id) {
         return this.categoryRepository.findById(id)
-                    .orElseThrow(() -> new ObjectNotFound("Category id: " + id + " not found."));
+                    .orElseThrow(() -> new ObjectNotFound("Category id: " + id + ", not found."));
     }
 
 }
