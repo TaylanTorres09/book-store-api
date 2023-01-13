@@ -33,4 +33,12 @@ public class CategoryService {
         return this.categoryRepository.save(category);
     }
 
+    public Category update(CategoryDTO categoryDTO, Long id) {
+        Category category = this.getByIdCategory(id);
+        category.setName(categoryDTO.getName());
+        category.setDescription(categoryDTO.getDescription());
+
+        return this.categoryRepository.save(category);
+    }
+
 }
