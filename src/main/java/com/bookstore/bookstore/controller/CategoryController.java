@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bookstore.bookstore.dtos.CategoryDTO;
 import com.bookstore.bookstore.models.Category;
 import com.bookstore.bookstore.service.CategoryService;
 
@@ -26,6 +27,15 @@ public class CategoryController {
     @GetMapping("/{id}")
     public Category getByIdCategory(@PathVariable(name = "id") Long id) {
         return this.categoryService.getByIdCategory(id);
+    }
+
+    @GetMapping
+    public List<CategoryDTO> getCategoryWithOutBooks() {
+        List<Category> categories = this.categoryService.getCategory();
+        List<CategoryDTO> categoryDTOs = categories.stream()
+                        .map(cat -> new CategoryDTO(cat.getId(), cat.getName(), cat.getDescription()))
+                        .toList();
+        return categoryDTOs;
     }
 
 }
