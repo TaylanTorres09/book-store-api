@@ -15,6 +15,9 @@ public class BookService {
     @Autowired
     private BookRepository bookRepository;
 
+    @Autowired
+    private CategoryService categoryService;
+
     public List<Book> getBooks() {
         return this.bookRepository.findAll();
     }
@@ -22,6 +25,11 @@ public class BookService {
     public Book getByIdBook(Long id) {
         return this.bookRepository.findById(id)
                 .orElseThrow(() -> new ObjectNotFound("Book id: " + id + ", not Found."));
+    }
+
+    public List<Book> findByCategory(Long idCategory) {
+        this.categoryService.getByIdCategory(idCategory);
+        return this.bookRepository.findByCategory(idCategory);
     }
 
 }
