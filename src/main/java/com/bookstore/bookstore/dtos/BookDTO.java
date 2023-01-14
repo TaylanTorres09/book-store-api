@@ -17,5 +17,6 @@ public class BookDTO {
         this.id = book.getId();
         this.title = book.getTitle();
     }
+
     
 }
