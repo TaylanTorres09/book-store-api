@@ -1,7 +1,5 @@
 package com.bookstore.bookstore.dtos;
 
-import com.bookstore.bookstore.models.Book;
-
 import jakarta.validation.constraints.NotEmpty;
 
 public class RequestBook {

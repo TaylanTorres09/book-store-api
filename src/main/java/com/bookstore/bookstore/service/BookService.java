@@ -12,8 +12,6 @@ import com.bookstore.bookstore.models.Category;
 import com.bookstore.bookstore.repositories.BookRepository;
 import com.bookstore.bookstore.service.exceptions.ObjectNotFound;
 
-import jakarta.validation.Valid;
-
 @Service
 public class BookService {
     
