@@ -6,12 +6,13 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bookstore.bookstore.dtos.BookDTO;
 import com.bookstore.bookstore.dtos.RequestBook;
 import com.bookstore.bookstore.models.Book;
 import com.bookstore.bookstore.models.Category;
 import com.bookstore.bookstore.repositories.BookRepository;
 import com.bookstore.bookstore.service.exceptions.ObjectNotFound;
+
+import jakarta.validation.Valid;
 
 @Service
 public class BookService {
@@ -48,5 +49,15 @@ public class BookService {
 
         return this.bookRepository.save(book);
     }
+
+    public Book update(Long id, RequestBook bookDTO) {
+        Book book = this.getByIdBook(id);
+
+        BeanUtils.copyProperties(bookDTO, book);
+
+        return this.bookRepository.save(book);
+    }
+
+
 
 }

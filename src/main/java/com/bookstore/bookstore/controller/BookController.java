@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -55,6 +56,12 @@ public class BookController {
         
         //return uri in headers
         return ResponseEntity.created(uri).build();
+    }
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Book> update(@PathVariable Long id, @Valid @RequestBody RequestBook bookDTO) {
+        Book book = this.bookService.update(id, bookDTO);
+        return new ResponseEntity<Book>(book, HttpStatus.OK);
     }
     
 }
