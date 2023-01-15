@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -60,6 +61,12 @@ public class BookController {
 
     @PutMapping("/update/{id}")
     public ResponseEntity<Book> update(@PathVariable Long id, @Valid @RequestBody RequestBook bookDTO) {
+        Book book = this.bookService.update(id, bookDTO);
+        return new ResponseEntity<Book>(book, HttpStatus.OK);
+    }
+
+    @PatchMapping("/update/{id}")
+    public ResponseEntity<Book> updatePatch(@PathVariable Long id, @Valid @RequestBody RequestBook bookDTO) {
         Book book = this.bookService.update(id, bookDTO);
         return new ResponseEntity<Book>(book, HttpStatus.OK);
     }
