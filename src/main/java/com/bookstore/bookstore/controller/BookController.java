@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -69,6 +70,11 @@ public class BookController {
     public ResponseEntity<Book> updatePatch(@PathVariable Long id, @Valid @RequestBody RequestBook bookDTO) {
         Book book = this.bookService.update(id, bookDTO);
         return new ResponseEntity<Book>(book, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> delete(@PathVariable Long id) {
+        return this.bookService.delete(id);
     }
     
 }

@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.bookstore.bookstore.dtos.RequestBook;
@@ -54,6 +56,13 @@ public class BookService {
         BeanUtils.copyProperties(bookDTO, book);
 
         return this.bookRepository.save(book);
+    }
+
+    public ResponseEntity<String> delete(Long id) {
+        this.getByIdBook(id);
+        
+        this.bookRepository.deleteById(id);
+        return new ResponseEntity<String>("Livro " + id + " removido com sucesso", HttpStatus.ACCEPTED);
     }
 
 
