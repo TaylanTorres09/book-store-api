@@ -2,9 +2,15 @@
 
 ## Descrição do Projeto
 
+Projeto consiste na criação de uma api para uma biblioteca, onde os livros serão cadastrados, atualizados e deletados.
+
+Cada livro terá uma categoria associada, onde para cadastrar um livro deverá preexistir uma categoria para o mesmo.
+
 ## End-Points do Projeto
 
 ### Para Livros
+
+
 
 ### Para Categoria
 
