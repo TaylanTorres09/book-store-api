@@ -96,6 +96,7 @@ Cada livro terá uma categoria associada, onde para cadastrar um livro deverá p
     - Ou outra de sua preferência.
 
 ## Próximos Passos
-
+- Fazer interfaces no front-end.
+- Implementar Cobertura de testes.
 ## Autor
 <a href="https://www.linkedin.com/in/taylan-torres" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
