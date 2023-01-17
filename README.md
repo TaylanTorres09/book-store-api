@@ -9,8 +9,32 @@ Cada livro terá uma categoria associada, onde para cadastrar um livro deverá p
 ## End-Points do Projeto
 
 ### Para Livros
+- [GET] consultar todos os livros: {url}/book/books
 
+- [GET] consultar 1 livro especifico, passar id por parametro na requisição: {url}/book/{id}
 
+- [GET] consultar livros por categoria, passar id de categoria query ex: {url}/book?category=1
+
+- [POST] criar Livro, passar id de categoria no corpo da requisição: {url}/book/create
+``` Json Body
+{
+    "title": "type string",
+    "author": "type string",
+    "text": "type string",
+    "categoryId": "type long",
+}
+```
+
+- [PutORPatch] atualizar Livro, passar id do livro por parametro da requisição: {url}/book/update/{id}
+``` Json Body
+{
+    "title": "type string",
+    "author": "type string",
+    "text": "type string",
+}
+```
+
+- [DELETE] deletar Livro, passar id do livro por parametro da requisição: {url}/book/delete/{id}
 
 ### Para Categoria
 
