@@ -91,6 +91,10 @@ Para acessar a documentação execute o projeto e acesse: [swagger](http://local
 
 ![BookstoreApplication](README_IMG/BookStoreApplication.png)
 
+- Após executado o projeto acesse [swagger](http://localhost:8080/swagger-ui/index.html#/) para ver documentação.
+
+![Swagger](README_IMG/Swagger.png)
+
 - Para testar a api você pode utilizar ferramentas de client como:
     - [Postman](https://www.postman.com/)
     - [Insomnia](https://insomnia.rest/download)
