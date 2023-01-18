@@ -6,6 +6,8 @@ Projeto consiste na criação de uma api para uma biblioteca, onde os livros ser
 
 Cada livro terá uma categoria associada, onde para cadastrar um livro deverá preexistir uma categoria para o mesmo.
 
+Para acessar a documentação execute o projeto e acesse: [swagger](http://localhost:8080/swagger-ui/index.html#/)
+
 ## End-Points do Projeto
 
 ### Para Livros
