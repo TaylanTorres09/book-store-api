@@ -48,7 +48,7 @@ public class CategoryService {
         this.getByIdCategory(id);
         try {
             this.categoryRepository.deleteById(id);
-            return new ResponseEntity<String>("Categoria " + id + " removida com sucesso", HttpStatus.ACCEPTED);
+            return new ResponseEntity<String>(HttpStatus.ACCEPTED);
         } catch (DataIntegrityViolationException e) {
             throw new com.bookstore.bookstore.service.exceptions.DataIntegrityViolationException(
                 "Categoria não pode ser deletada! Possui livros associados"
