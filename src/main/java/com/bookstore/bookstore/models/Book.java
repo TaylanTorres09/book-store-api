@@ -2,6 +2,8 @@ package com.bookstore.bookstore.models;
 
 import java.io.Serializable;
 
+import org.hibernate.validator.constraints.Length;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
@@ -30,7 +32,8 @@ public class Book implements Serializable {
     private String title;
 
     private String author;
-
+    
+    @Length(min = 10, max = 1000000)
     private String text;
  
     @JsonIgnore
